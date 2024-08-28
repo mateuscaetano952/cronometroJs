@@ -1,4 +1,4 @@
 # Cronometro simples em Js.
 
-![exemplo1]("exemplo1.png")
-![exemplo2]("exemplo2.png")
+![screenshot](exemplo1.png)
+![screenshot](exemplo2.png)
