@@ -33,6 +33,7 @@ btnParar.onclick = () => {
    statu = 'parado';
 };
 
+// Funções
 
 function zera(){
     horas = 0;

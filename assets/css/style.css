@@ -1,9 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
-:root {
-  --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
-}
-
+/*Formtações gerais*/
 * {
   box-sizing: border-box;
   outline: 0;
@@ -16,6 +11,8 @@ body {
   font-size: 1.3em;
   line-height: 1.5em;
 }
+
+/*Componentes*/
 
 .container {
     margin: 0px auto;
@@ -36,15 +33,6 @@ form button {
   height: 50px;
   cursor: pointer;
   margin-top: 30px;
-}
-
-.colorWhite {
-  color: #fff
-}
-
-
-.textAlign{
-  text-align: center
 }
 
 .btn{
@@ -74,11 +62,13 @@ form button {
   text-align: center;
 }
 
-/* Estilos para telas menores */
-@media (max-width: 768px) {
-  .container {
-     
-  }
+/* Classes uteis */
 
- 
+.colorWhite {
+  color: #fff
+}
+
+
+.textAlign{
+  text-align: center
 }
