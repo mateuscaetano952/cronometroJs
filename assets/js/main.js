@@ -1,77 +1,71 @@
+// Seleção de elementos
 let btnIniciar = document.querySelector('.iniciar');
 let btnZerar = document.querySelector('.zerar');
 let btnParar = document.querySelector('.parar');
 
+//Declarações de variaveis
+
 let horas = 0;
 let minutos = 0;
 let segundos = 0;
+let milisegundos = 0;
+cron = 0;
 
-let stringHora;
-let stringMinuto;
-let stringSegundo;
-let stringTimer;
+//Chamadas das funçpes
 
-let interval;
+btnIniciar.onclick = () => {
+    cron = setInterval (() => {iniciar()}, 10);
+};
 
-btnIniciar.addEventListener("click", () => {
-    iniciarTimer();
-})
+btnZerar.onclick = () => {
+    zera();
+    clearInterval(cron);
+};
 
-btnZerar.addEventListener("click", () => {
+btnParar.onclick = () => {
+   clearInterval(cron);
+};
+
+
+function zera(){
     horas = 0;
     minutos = 0;
     segundos = 0;
+    milisegundos = 0;
+    cron = 0;
 
-})    
+    document.getElementById('horas').innerText = "00";
+    document.getElementById('minutos').innerText = "00";
+    document.getElementById('segundos').innerText = "00";
+    document.getElementById('milisegundos').innerText = "00";
 
-btnParar.addEventListener("click", () => {
-    clearInterval(interval);
-})
-
-function iniciarTimer(){
-    interval = setInterval(()=> {
-        if(segundos < 60){
-            segundos++;
-        }
-        
-        if(segundos >= 60){
-            segundos = 0;
-            minutos += 1;
-        }
-
-        if(minutos >= 60){
-            minutos = 0;
-            horas += 1;
-        }
-
-
-        geraString()
-        let displayTimer = document.querySelector('.timerDisplay');
-        displayTimer.innerHTML = stringTimer;
-    }, 100)
-
-    function  geraString(){
-        if(horas <= 9 ){
-            stringHora = "0" + horas;
-        }else{
-            stringHora = hora;
-        }
-
-        if(minutos <= 9){
-            stringMinuto = "0" + minutos;
-        }else{
-            stringMinuto = minutos;
-        }
-
-
-        if(segundos <= 9){
-            stringSegundo = "0" + segundos;
-        }else{
-            stringSegundo = segundos;
-        }
-
-
-        stringTimer = stringHora + ":" + stringMinuto + ":" + stringSegundo; 
-        console.log("0" + stringTimer);
-    }
 }
+
+
+function iniciar(){
+    if ((milisegundos += 10) == 1000) {
+        milisegundos = 0;
+        segundos++;
+      }
+      if (segundos == 60) {
+        segundos = 0;
+        minute++;
+      }
+      if (minutos == 60) {
+        minutos = 0;
+        horas++;
+      }
+
+      console.log(horas + " " + minutos + " " + segundos + " " + milisegundos)
+
+      document.getElementById('horas').innerText = retornaValores(horas);
+      document.getElementById('minutos').innerText = retornaValores(minutos);
+      document.getElementById('segundos').innerText = retornaValores(segundos);
+      document.getElementById('milisegundos').innerText = retornaValores(milisegundos);
+
+
+}
+
+function retornaValores(valor){
+    return valor > 10 ? valor : `0${valor}`
+} 

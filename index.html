@@ -6,17 +6,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Modelo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
 
   <section class="container">
-    <h1>Timer</h1>
-    <div class="timerDisplay">00:00:00</div>
-    <button class="iniciar">iniciar</button>
-    <button class="parar">parar</button>
-    <button class="zerar">zerar</button>
+    <div class="timerApp">
+      <h1 class="textAlign colorWhite">Timer</h1>
+    
+      <ul class="timerDisplay textAlign colorWhite">
+        <li id="horas">00</span>
+        <li>:</li>
+        <li id="minutos">00</span>
+        <li>:</li>
+        <li id="segundos">00</span>
+        <li>:</li>
+        <li id="milisegundos">00</span>
+      </ul>
+     
+      <div class="textAlign colorWhite .btn">
+        <button class="iniciar fa fa-play colorWhite btn"></button>
+        <button class="parar fa fa-stop colorWhite btn"></button>
+        <button class="zerar fa fa-trash colorWhite btn"></button>
+     </div>
+    </div>
   </section>
 
   <script src="./assets/js/main.js"></script>
