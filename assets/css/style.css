@@ -18,15 +18,17 @@ body {
 }
 
 .container {
-  margin: 0px auto;
-  margin-top: 2em;
-  background-color: #3c6bb0;
-  width: 500px;
-  height: 500px;
-  border-radius: 10px;
-  border-radius: 50%;
-  border: 3px solid #fff ;
+    margin: 0px auto;
+    margin-top: 2em;
+    background-color: #3c6bb0;
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    border-radius: 50%;
+    border: 3px solid #fff ;
+    min-width: 500px;
 }
+
 
 form button {
   border: none;
@@ -70,4 +72,13 @@ form button {
   height: 100px;
   line-height: 100px;
   text-align: center;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+  .container {
+     
+  }
+
+ 
 }

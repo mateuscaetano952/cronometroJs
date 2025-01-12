@@ -9,21 +9,28 @@ let horas = 0;
 let minutos = 0;
 let segundos = 0;
 let milisegundos = 0;
+let statu //iniciado parado
 cron = 0;
+
 
 //Chamadas das funçpes
 
 btnIniciar.onclick = () => {
-    cron = setInterval (() => {iniciar()}, 10);
+    if(statu != 'iniciado'){
+        cron = setInterval (() => {iniciar()}, 10);
+        statu = 'iniciado';
+    }
 };
 
 btnZerar.onclick = () => {
     zera();
     clearInterval(cron);
+    statu = 'parado';
 };
 
 btnParar.onclick = () => {
    clearInterval(cron);
+   statu = 'parado';
 };
 
 
@@ -32,7 +39,6 @@ function zera(){
     minutos = 0;
     segundos = 0;
     milisegundos = 0;
-    cron = 0;
 
     document.getElementById('horas').innerText = "00";
     document.getElementById('minutos').innerText = "00";
